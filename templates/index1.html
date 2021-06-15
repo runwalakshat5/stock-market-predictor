@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Predictor</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/static/fav.jpg' />
+    
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="margin: 0px;">
+    <div>
+    <div class="container">
+    <h2  style="margin-top: 0px; margin-bottom: 0px;"><span class="heading_font">Stock Market Predictor</span></h2>
+     <h3 class="description"><p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.<br>It helps to predict the closing price of SENSEX(BSE) today,<br> by doing 
+     numerical and textual analysis.</p></h3></div>
+        <form action="{{ url_for('predict')}}" method="post">
+            <br>
+           <br>
+         
+
+             <input id="second" name="open" type="text " placeholder="Opening price of Sensex">   
+             <br><br><input id="second" name="high" type="text " placeholder="High">
+             <br><br><input id="second" name="low" type="text " placeholder="Low">
+            <br><br> <input id="second" name="volume" type="text " placeholder="Volume">
+             <br><br>   <input id="second" name="txt" type="text " placeholder="News-Headline">
+             <br><br><input id="sub" type="submit" class="my-cta-button" value="Predict">
+            <br>
+    
+        </form>
+
+
+
+        <br><h3 class="prediction">{{ prediction_text }}<h3>
+        
+    </div>
+        <div class="footer">
+        <div class="contact" style="margin-top:12px">
+               <a target="_blank" href="https://github.com/runwalakshat5" style=" color: white;"><i class="fab fa-github fa-lg contact-icon" aria-hidden="true"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/akshat-runwal-04a827190/" style="color: white;"><i class="fab fa-linkedin fa-lg contact-icon" aria-hidden="true"></i></a>
+           </div>
+          <p style="margin-bottom:5px;margin-top:5px">Made with ❤️ by Akshat Runwal.</p>
+        </div>
+
+
+    <style>
+        body {
+            
+            text-align: center;
+            padding: 0px;
+            background-image:url('/static/market.jpg');
+            background-size:100%;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            height:100%;
+            width:100%;
+            max-width: 100%;
+            overflow-x: hidden;
+                font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    
+        }
+        .my-cta-button {
+    background: #f9f9f9;
+    border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+    margin-top: 10px;
+    padding: 10px 36px;
+    color: #000000;
+    display: inline-block;
+    font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+.prediction{
+color: black;
+font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    background-color:white;
+
+}
+
+.my-cta-button:active {
+    box-shadow: 0 0;
+}
+.my-cta-button:hover {
+    color: red;
+    border: 2px solid red;
+}
+    
+        .description p {
+    color: #ffffff;
+    font-family: 'Pacifico', cursive;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+        .heading_font {
+        color: #ffffff;
+        font-family: 'Pacifico', cursive;
+        font-size: 30px;
+        font-weight: normal;
+        }
+        
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#2bff6e;
+  opacity: 1; /* Firefox */
+}
+        
+        .container{ 
+        
+            padding: 5px;
+        position: relative;
+        background: linear-gradient( 
+            45deg
+         , #000000,#000000, #000000);
+        background-size: 500% 500%;
+        
+        
+        }
+ input:focus::placeholder {
+  color: transparent;
+}
+        
+        
+        html {
+        height:100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 24px;
+            height: 45px;
+            font-size: 20px;
+            text-align: center;
+            font-family: 'Pacifico', cursive; font-size: 25px;
+            border-color:#ff2b3d;
+            border:solid;
+            
+        }
+
+        #third {
+            border-radius: 24px;
+            height: 45px;
+            width: 545px;
+            font-size: 20px;
+            text-align: center;
+       color: #4d089a;font-family: 'Pacifico', cursive; font-size: 25px;
+       border-color:#4d089a;
+       border:solid;
+       
+       
+        }
+        input:focus{
+    outline: none;
+}
+ select:focus{
+    outline: none;
+}
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 
+        background-size: 500% 500%;
+   color: #ffffff;
+        font-family: 'Pacifico', cursive;
+        font-size: 15px;
+        font-weight: normal;
+  text-align: center;
+}
+        
+
+    </style>
+</body>
+
+</html>
